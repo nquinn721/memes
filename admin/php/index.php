@@ -10,8 +10,7 @@
  * http://www.opensource.org/licenses/MIT
  */
 
-// error_reporting(E_ALL | E_STRICT);
-// require('UploadHandler.php');
-// $upload_handler = new UploadHandler();
+error_reporting(E_ALL | E_STRICT);
+require('UploadHandler.php');
+$upload_handler = new UploadHandler();
 
-echo 'hi';
