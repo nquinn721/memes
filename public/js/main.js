@@ -1,6 +1,6 @@
 var baseurl = 'http://d2ws0xxnnorfdo.cloudfront.net/meme/',
 	start = 33122,
-	loadAtATime = 50,
+	loadAtATime = 10,
 	loadedNonScroll = 0;
 function loadImages () {
 	for(var i = 0; i < loadAtATime; i++){
