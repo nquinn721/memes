@@ -5,30 +5,7 @@
 	<title>Document</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" type="text/css"/>
-	<style>
-	img{
-		width:200px;
-		height:200px;
-	}
-	.splash {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		background: rgba(0,0,0,0.8);
-		display: flex;
-	}
-	.none{
-		display: none;
-	}
-	.splash img {
-		margin: auto;
-		width:600px;
-		height: auto;
-		max-height: 900px;
-	}
-	</style>
+	<link rel="stylesheet" href="public/css/main.css">
 </head>
 <body>
 <div class="splash none">
