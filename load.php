@@ -1,6 +1,9 @@
 <?php
 $url = 'http://d2ws0xxnnorfdo.cloudfront.net/meme/';
 $num = 33122;
+$have = 59678;
+
+$num += $have;
 
 function load($url, $num){
 	$file = file_get_contents($url . $num);
@@ -20,5 +23,7 @@ function load($url, $num){
 for($i = 0; $i < 20000; $i++){
 	load($url, $num);
 	$num += 1;
+
+	if($num % 100 === 0)echo "Loaded: " . $num . "\n";
 }
 ?>

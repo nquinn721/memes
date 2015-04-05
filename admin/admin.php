@@ -12,12 +12,16 @@ $user = $_SESSION['user'];
 	<title>Admin</title>
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" type="text/css"/>
 	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/themes/smoothness/jquery-ui.css" />
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
 	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-	<script src="../public/jQuery-File-Upload-9.9.3/js/jquery.fileupload.js"></script>
-	<link rel="stylesheet" href="../public/jQuery-File-Upload-9.9.3/css/jquery.fileupload.css">
+	
+
+
+
+	<script src="js/jquery.fileupload.js"></script>
+	<link rel="stylesheet" href="css/jquery.fileupload-ui.css">
 	
 	<style>
 	.progress {
@@ -38,7 +42,7 @@ $user = $_SESSION['user'];
 	        <!-- The file input field used as target for the file upload widget -->
 	        <input id="fileupload" type="file" name="files[]" multiple>
 	    </span>
-	    <div class="progress" >
+	    <div class="progress" id="progress">
 		  <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" >
 		    <span class="sr-only"></span>
 		  </div>
@@ -47,8 +51,8 @@ $user = $_SESSION['user'];
 	</div>
 </div>
 <script>
- $('#fileupload').fileupload({
-    url: 'php',
+$('#fileupload').fileupload({
+    url: 'uploader/',
     dataType: 'json',
     done: function (e, data) {
         $.each(data.result.files, function (index, file) {
@@ -57,10 +61,13 @@ $user = $_SESSION['user'];
     },
     progressall: function (e, data) {
         var progress = parseInt(data.loaded / data.total * 100, 10);
-        $('.progress-bar').css(
+        $('#progress .progress-bar').css(
             'width',
             progress + '%'
         );
+    },
+    success : function (data) {
+    	console.log(data);
     }
 });
 </script>
